@@ -1,0 +1,288 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sinara Skin</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: satu kolom lebar 1120px; hero dua kolom dengan bola cahaya sebagai satu-satunya elemen berani, sisanya tenang. */
+:root{
+  --bg:#FBF3F5; --surface:#FFFFFF; --ink:#2A1330; --muted:#6E5874; --line:#EAD9E1;
+  --pink:#C92F6B; --honey:#F2A93B; --glow-a:#FFD27A; --glow-b:#FF8FB4;
+  --b1:#BFE3D6; --b2:#F6B6CB; --b3:#F9D48A; --b4:#C9C2F2; --cap:#2A1330;
+  --display:"Gloock","Iowan Old Style",Georgia,serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1C0E21; --surface:#2A1731; --ink:#F8EAF0; --muted:#BBA3C0; --line:#432A4B;
+    --pink:#FF86B3; --honey:#FFC766; --glow-a:#FFC766; --glow-b:#E0457B;
+    --b1:#8FCBB8; --b2:#F08FB0; --b3:#F2C062; --b4:#A79EEA; --cap:#120816;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1C0E21; --surface:#2A1731; --ink:#F8EAF0; --muted:#BBA3C0; --line:#432A4B;
+  --pink:#FF86B3; --honey:#FFC766; --glow-a:#FFC766; --glow-b:#E0457B;
+  --b1:#8FCBB8; --b2:#F08FB0; --b3:#F2C062; --b4:#A79EEA; --cap:#120816;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.9rem,4.5vw,2.9rem)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.btn{font:inherit;font-weight:600;border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:.8rem 1.4rem;border-radius:999px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.85}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--display);font-size:1.5rem;text-decoration:none}
+.logo span{color:var(--pink)}
+nav{display:flex;gap:22px;font-size:.92rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.cart{font-size:.9rem;font-weight:600;white-space:nowrap}
+.cart b{display:inline-block;min-width:1.6em;text-align:center;background:var(--pink);color:var(--bg);border-radius:999px;padding:0 .4em;margin-left:.3em;font-variant-numeric:tabular-nums}
+@media (max-width:640px){nav{display:none}}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-block:56px 64px}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.2rem);margin-block:14px 18px}
+.hero h1 em{font-style:italic;color:var(--pink)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:34em}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.facts strong{display:block;color:var(--ink);font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.2}
+.orb{position:relative;aspect-ratio:1;max-width:100%;width:420px;justify-self:center;display:grid;place-items:center}
+.orb::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--glow-a) 0%,var(--glow-b) 45%,transparent 70%);filter:blur(6px);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.06);opacity:.85}}
+@media (prefers-reduced-motion:reduce){.orb::before{animation:none}}
+.orb .bottle{position:relative;width:34%;--tint:var(--surface)}
+@media (max-width:820px){.hero{grid-template-columns:1fr;padding-block:36px 48px}.orb{width:280px;order:-1}}
+
+.bottle{display:flex;flex-direction:column;align-items:center;--tint:var(--b1)}
+.bottle i{display:block;width:38%;height:26px;background:var(--cap);border-radius:5px 5px 0 0}
+.bottle u{display:grid;place-items:center;width:100%;aspect-ratio:3/4.4;background:var(--tint);border-radius:14px 14px 20px 20px;text-decoration:none;font-family:var(--display);font-size:.95rem;color:#2A1330;box-shadow:inset -10px 0 18px rgba(42,19,48,.12),inset 8px 0 14px rgba(255,255,255,.45)}
+
+section{padding-block:64px;border-top:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:34px;max-width:40em}
+.head p:last-child{color:var(--muted)}
+
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 18px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .bottle{width:46%;margin:6px auto 14px}
+.card h3{font-size:1.45rem}
+.card .kind{font-size:.8rem;font-weight:600;color:var(--pink)}
+.card .desc{font-size:.9rem;color:var(--muted);flex:1}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px}
+.price{font-weight:700;font-variant-numeric:tabular-nums}
+.price small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+.add{font:inherit;font-size:.85rem;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:.45rem .95rem;cursor:pointer}
+.add:hover{background:var(--ink);color:var(--bg)}
+@media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:440px){.products{grid-template-columns:1fr}}
+
+.ing{display:grid;grid-template-columns:auto 1fr 1.6fr;column-gap:24px}
+.ing>div{display:contents}
+.ing span{padding-block:16px;border-bottom:1px solid var(--line);min-width:0}
+.ing .pct{font-family:var(--display);font-size:1.9rem;line-height:1.1;color:var(--pink);font-variant-numeric:tabular-nums}
+.ing .nm{font-weight:600}
+.ing .fn{color:var(--muted);font-size:.95rem}
+@media (max-width:640px){.ing{grid-template-columns:auto 1fr}.ing .fn{grid-column:1/-1;padding-top:0;margin-top:-8px}.ing .pct,.ing .nm{border-bottom:0}}
+
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;background:var(--surface);margin-bottom:26px}
+.tabs button{font:inherit;font-weight:600;font-size:.9rem;border:0;background:transparent;color:var(--muted);padding:.5rem 1.2rem;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:14px}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:2rem;color:var(--honey);display:block;line-height:1}
+.steps b{display:block;margin-block:8px 4px}
+.steps span{color:var(--muted);font-size:.92rem}
+
+.faq{max-width:46em}
+details{border-bottom:1px solid var(--line);padding-block:16px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin-top:10px}
+
+footer{border-top:1px solid var(--line);padding-block:32px 40px;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Sinara<span>.</span></a>
+    <nav aria-label="Navigasi utama">
+      <a href="#produk">Produk</a>
+      <a href="#kandungan">Kandungan</a>
+      <a href="#rutinitas">Rutinitas</a>
+      <a href="#tanya">Tanya Jawab</a>
+    </nav>
+    <div class="cart" aria-live="polite">Keranjang<b id="cart-count">0</b></div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Perawatan kulit untuk iklim tropis</p>
+      <h1>Kulit yang <em>memantulkan</em> cahaya.</h1>
+      <p class="lead">Empat produk ringan untuk kulit lembap, cerah merata, dan tidak lengket di cuaca panas. Diformulasikan untuk dipakai setiap hari, pagi dan malam.</p>
+      <div class="actions">
+        <a class="btn" href="#produk">Lihat produk</a>
+        <a class="btn ghost" href="#rutinitas">Cara pakai</a>
+      </div>
+      <div class="facts">
+        <div><strong>4 langkah</strong>rutinitas lengkap</div>
+        <div><strong>pH 5,5</strong>ramah skin barrier</div>
+        <div><strong>SPF 50</strong>PA++++ tanpa white cast</div>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <div class="bottle"><i></i><u>Sinar</u></div>
+    </div>
+  </div>
+
+  <section id="produk">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Koleksi Glow</p>
+        <h2>Empat botol, satu rutinitas.</h2>
+        <p>Semua produk bebas alkohol dan pewangi tambahan, cocok untuk kulit normal, berminyak, hingga sensitif.</p>
+      </div>
+      <div class="products">
+        <article class="card">
+          <div class="bottle" style="--tint:var(--b1)" aria-hidden="true"><i></i><u>Embun</u></div>
+          <p class="kind">Pembersih wajah</p>
+          <h3>Embun Pagi</h3>
+          <p class="desc">Gel pembersih berbusa lembut dengan pH 5,5. Mengangkat minyak dan sisa sunscreen tanpa rasa ketarik.</p>
+          <div class="row"><p class="price">Rp 89.000<small>100 ml</small></p><button class="add" type="button">Tambah</button></div>
+        </article>
+        <article class="card">
+          <div class="bottle" style="--tint:var(--b2)" aria-hidden="true"><i></i><u>Kabut</u></div>
+          <p class="kind">Essence toner</p>
+          <h3>Kabut Mawar</h3>
+          <p class="desc">Toner cair dengan PHA 3% dan air mawar. Menghaluskan tekstur kulit secara perlahan dan menyiapkan kulit untuk serum.</p>
+          <div class="row"><p class="price">Rp 119.000<small>120 ml</small></p><button class="add" type="button">Tambah</button></div>
+        </article>
+        <article class="card">
+          <div class="bottle" style="--tint:var(--b3)" aria-hidden="true"><i></i><u>Sinar</u></div>
+          <p class="kind">Serum pencerah</p>
+          <h3>Sinar Serum</h3>
+          <p class="desc">Niacinamide 10% dan alpha arbutin 2% untuk membantu menyamarkan noda bekas jerawat dan meratakan warna kulit.</p>
+          <div class="row"><p class="price">Rp 149.000<small>30 ml</small></p><button class="add" type="button">Tambah</button></div>
+        </article>
+        <article class="card">
+          <div class="bottle" style="--tint:var(--b4)" aria-hidden="true"><i></i><u>Tabir</u></div>
+          <p class="kind">Sunscreen harian</p>
+          <h3>Tabir Siang</h3>
+          <p class="desc">SPF 50 PA++++ bertekstur gel-krim. Cepat meresap, tidak meninggalkan white cast, nyaman di bawah makeup.</p>
+          <div class="row"><p class="price">Rp 135.000<small>50 ml</small></p><button class="add" type="button">Tambah</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kandungan">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Kandungan utama</p>
+        <h2>Kadar yang tertulis jelas di botol.</h2>
+        <p>Kami mencantumkan persentase bahan aktif supaya kamu tahu persis apa yang dipakai di kulit.</p>
+      </div>
+      <div class="ing">
+        <div><span class="pct">10%</span><span class="nm">Niacinamide</span><span class="fn">Membantu mengontrol minyak, menyamarkan pori, dan meratakan warna kulit.</span></div>
+        <div><span class="pct">2%</span><span class="nm">Alpha Arbutin</span><span class="fn">Membantu memudarkan noda gelap dan bekas jerawat secara bertahap.</span></div>
+        <div><span class="pct">3%</span><span class="nm">PHA (Gluconolactone)</span><span class="fn">Eksfoliasi ringan yang lebih lembut daripada AHA, cocok untuk kulit sensitif.</span></div>
+        <div><span class="pct">5%</span><span class="nm">Ekstrak Centella Asiatica</span><span class="fn">Menenangkan kemerahan dan membantu menjaga skin barrier.</span></div>
+        <div><span class="pct">1%</span><span class="nm">Hyaluronic Acid</span><span class="fn">Mengikat air di lapisan kulit sehingga wajah terasa kenyal dan lembap.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rutinitas">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Cara pakai</p>
+        <h2>Urutan pemakaian.</h2>
+        <p>Pakai dari tekstur paling cair ke paling kental. Beri jeda sekitar 30 detik di antara tiap langkah.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Waktu pemakaian">
+        <button id="tab-pagi" type="button" role="tab" aria-selected="true" aria-controls="steps-pagi">Pagi</button>
+        <button id="tab-malam" type="button" role="tab" aria-selected="false" aria-controls="steps-malam">Malam</button>
+      </div>
+      <ol class="steps" id="steps-pagi" role="tabpanel" aria-labelledby="tab-pagi">
+        <li><b>Embun Pagi</b><span>Busakan seukuran biji jagung di tangan basah, pijat 30 detik, bilas.</span></li>
+        <li><b>Kabut Mawar</b><span>Tuang ke telapak tangan, tepuk-tepuk ke wajah sampai meresap.</span></li>
+        <li><b>Sinar Serum</b><span>2–3 tetes untuk wajah dan leher.</span></li>
+        <li><b>Tabir Siang</b><span>Dua ruas jari untuk wajah dan leher. Ulangi tiap 2–3 jam saat di luar ruangan.</span></li>
+      </ol>
+      <ol class="steps" id="steps-malam" role="tabpanel" aria-labelledby="tab-malam" hidden>
+        <li><b>Embun Pagi</b><span>Bersihkan dua kali kalau seharian memakai sunscreen atau makeup.</span></li>
+        <li><b>Kabut Mawar</b><span>Pakai dengan kapas untuk bantu mengangkat sel kulit mati.</span></li>
+        <li><b>Sinar Serum</b><span>3–4 tetes, tekan lembut sampai meresap sebelum tidur.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="tanya">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Tanya jawab</p>
+        <h2>Yang sering ditanyakan.</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Berapa lama sampai hasilnya terlihat?</summary>
+          <p>Kulit terasa lebih lembap sejak pemakaian pertama. Untuk warna kulit yang lebih merata, biasanya butuh 4–8 minggu pemakaian rutin. Hasil tiap orang bisa berbeda.</p>
+        </details>
+        <details>
+          <summary>Apakah aman untuk kulit sensitif?</summary>
+          <p>Semua produk bebas alkohol dan pewangi tambahan. Tetap lakukan uji tempel di belakang telinga selama 24 jam sebelum pemakaian pertama.</p>
+        </details>
+        <details>
+          <summary>Bolehkah dipakai oleh remaja?</summary>
+          <p>Embun Pagi dan Tabir Siang cocok mulai usia 13 tahun. Serum dan toner eksfoliasi sebaiknya dipakai mulai usia 17 tahun.</p>
+        </details>
+        <details>
+          <summary>Bagaimana cara menyimpan produknya?</summary>
+          <p>Simpan di tempat sejuk dan kering, jauh dari sinar matahari langsung. Gunakan dalam 12 bulan setelah kemasan dibuka.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Sinara Skin · Jakarta</p>
+    <p>Situs contoh. Merek, produk, dan harga di halaman ini fiktif.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var count=0, out=document.getElementById('cart-count');
+  document.querySelectorAll('.add').forEach(function(b){
+    b.addEventListener('click',function(){
+      count++; out.textContent=count;
+      b.textContent='Ditambahkan';
+      setTimeout(function(){b.textContent='Tambah'},1200);
+    });
+  });
+  var tabs={pagi:document.getElementById('tab-pagi'),malam:document.getElementById('tab-malam')};
+  var panels={pagi:document.getElementById('steps-pagi'),malam:document.getElementById('steps-malam')};
+  Object.keys(tabs).forEach(function(k){
+    tabs[k].addEventListener('click',function(){
+      Object.keys(tabs).forEach(function(j){
+        tabs[j].setAttribute('aria-selected', j===k ? 'true':'false');
+        panels[j].hidden = j!==k;
+      });
+    });
+  });
+})();
+</script>
+
+</body></html>
